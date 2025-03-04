@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <img src="./images/logo.svg" alt="splitter logo" style="width: 86.66px;">
+  <div class="card">
+      <div class="formsection">
+        <form id="bill">
+          <label for="billtotal">Bill</label>
+          <div class="numberinput">
+            <input type="number" name="billtotal" id="billtotal" placeholder="0" oninput="billSplit(0, 0)">
+            <img src="./images/icon-dollar.svg" alt="dollar sign icon">
+          </div>
+        </form>
+        <form id="percentages">
+          <label>Select Tip %</label>
+            <input type="button" value="5%" id="5" class="inactive" onclick="buttonToggle(button0); billSplit();">
+            <input type="button" value="10%" id="10" class="inactive" onclick="buttonToggle(button1); billSplit();">
+            <input type="button" value="15%" id="15" class="inactive" onclick="buttonToggle(button2); billSplit();">
+            <input type="button" value="20%" id="20" class="inactive" onclick="buttonToggle(button3); billSplit();">
+            <input type="button" value="25%" id="25" class="inactive" onclick="buttonToggle(button4); billSplit();">
+            <input type="number" value="Custom" id="custom" class="inactive" placeholder="Custom" onclick="buttonToggle(custom)" oninput="billSplit()">
+        </form>
+        <form id="numberofpeople">
+          <label for="numpeople">Number of People</label>
+          <div class="numberinput">
+            <input type="number" name="numpeople" id="numpeople" placeholder="0" oninput="billSplit(0, 0)">
+            <img src="./images/icon-person.svg" alt="person icon">
+          </div>
+        </form>
+        </div>
+        <div class="outputsection">
+          <div>
+            <div class="output">
+              <div>
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <p id="tipOutput">$0</p>
+            </div>
+            <div class="output">
+              <div>
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <p id="totalOutput">$0</p>
+            </div>
+          </div>
+          <button id="reset" onclick="reset()">RESET</button>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
