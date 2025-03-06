@@ -16,9 +16,10 @@
   <div class="card">
       <div class="formsection">
         <form id="bill">
-          <label for="billtotal">Bill</label>
+          <label for="billtotal" style="display:inline;">Bill</label>
+          <span id="billErr">Can't be negative or 0</span>
           <div class="numberinput">
-            <input type="number" name="billtotal" id="billtotal" placeholder="0" oninput="billSplit(0, 0)">
+            <input type="number" name="billtotal" id="billtotal" placeholder="0" oninput="billValidation(); billSplit();">
             <img src="./images/icon-dollar.svg" alt="dollar sign icon">
           </div>
         </form>
@@ -32,9 +33,10 @@
             <input type="number" value="Custom" id="custom" class="inactive" placeholder="Custom" onclick="buttonToggle(custom)" oninput="billSplit()">
         </form>
         <form id="numberofpeople">
-          <label for="numpeople">Number of People</label>
+          <label for="numpeople" style="display:inline;">Number of People</label>
+          <span id="peopleErr">Can't be negative or 0</span>
           <div class="numberinput">
-            <input type="number" name="numpeople" id="numpeople" placeholder="0" oninput="billSplit(0, 0)">
+            <input type="number" name="numpeople" id="numpeople" placeholder="0" oninput="peopleValidation(); billSplit();">
             <img src="./images/icon-person.svg" alt="person icon">
           </div>
         </form>

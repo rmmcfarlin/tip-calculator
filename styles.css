@@ -30,6 +30,7 @@ input::-webkit-inner-spin-button {
     --lightgreycyan: #9FE8DF;
     --lightgrey: #F3F9FA;
     --darkgrey: #5E7A7D;
+    --red: #E17457;
 }
 
 /* main */
@@ -59,6 +60,10 @@ body {
     margin-top: 13px;
 }
 
+form {
+    position: relative;
+}
+
 .formsection {
     width: 50%;
     height: fit-content;
@@ -68,6 +73,13 @@ body {
 
 label {
     display: block;
+}
+
+#peopleErr, #billErr {
+    display: none;
+    color: var(--red);
+    position: absolute;
+    right: 0%;
 }
 
 #percentages {
@@ -184,6 +196,11 @@ input[type="button"]:hover {
 input[type="number"]:focus, #custom:focus {
     outline: none;
     border: 2px solid var(--strongcyan);
+}
+
+#billtotal.err, #numpeople.err {
+    outline: none;
+    border: 2px solid var(--red);
 }
 
 /* mobile */

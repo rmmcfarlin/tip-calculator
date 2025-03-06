@@ -1,6 +1,8 @@
 const billInput = document.getElementById('billtotal')
 const peopleInput = document.getElementById('numpeople')
 const totalOutput = document.getElementById('totalOutput')
+const billErr = document.getElementById('billErr')
+const peopleErr = document.getElementById('peopleErr')
 const button0 = document.getElementById('5')
 const button1 = document.getElementById('10')
 const button2 = document.getElementById('15')
@@ -52,10 +54,10 @@ function billSplit () {
 
 // set text content for output fields as rounded values
     
-    if (isNaN(tipRounded()) || isNaN(totalRounded())) {
+    if (isNaN(tipRounded()) || isNaN(totalRounded()) || totalRounded() < 0 || tipRounded() < 0) {
         tipOutput.textContent = '$0'
         totalOutput.textContent = '$0'
-    } else {
+    } else if (isFinite(tipRounded()) && isFinite(totalRounded())) {
         tipOutput.textContent = `$${tipRounded()}`
     totalOutput.textContent = `$${totalRounded()}`
     }
@@ -69,10 +71,35 @@ function reset () {
         bttns[i].className = ('inactive')
     }
 
-    billInput.value = 0
-    peopleInput.value = 0
-    totalOutput.value = 0
-    customButton.value = 0
+    billInput.value = ''
+    peopleInput.value = ''
+    totalOutput.value = ''
+    customButton.value = ''
     tipOutput.textContent = '$0'
     totalOutput.textContent = '$0'
+}
+
+function billValidation () {
+
+    if (billInput.valueAsNumber <= 0) {
+        billInput.classList.add('err')
+        billErr.style.display = ('inline')
+        tipOutput.textContent = '$0'
+        totalOutput.textContent = '$0'
+    } else {
+        billErr.style.display = ('none')
+        billInput.classList.remove('err')
+    }   
+}
+
+function peopleValidation () {
+    if (peopleInput.valueAsNumber <= 0) {
+        peopleInput.classList.add('err')
+        peopleErr.style.display = ('inline')
+        tipOutput.textContent = '$0'
+        totalOutput.textContent = '$0'
+    } else {
+        peopleErr.style.display = ('none')
+        peopleInput.classList.remove('err')
+    }  
 }
