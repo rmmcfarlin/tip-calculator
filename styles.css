@@ -155,6 +155,7 @@ input[type="button"] {
 p:first-of-type {
     color: #FFFFFF;
     font-size: 1rem;
+    font-weight: bold;
 
 }
 

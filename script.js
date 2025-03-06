@@ -55,8 +55,8 @@ function billSplit () {
 // set text content for output fields as rounded values
     
     if (isNaN(tipRounded()) || isNaN(totalRounded()) || totalRounded() < 0 || tipRounded() < 0) {
-        tipOutput.textContent = '$0'
-        totalOutput.textContent = '$0'
+        tipOutput.textContent = '$0.00'
+        totalOutput.textContent = '$0.00'
     } else if (isFinite(tipRounded()) && isFinite(totalRounded())) {
         tipOutput.textContent = `$${tipRounded()}`
     totalOutput.textContent = `$${totalRounded()}`
@@ -75,8 +75,8 @@ function reset () {
     peopleInput.value = ''
     totalOutput.value = ''
     customButton.value = ''
-    tipOutput.textContent = '$0'
-    totalOutput.textContent = '$0'
+    tipOutput.textContent = '$0.00'
+    totalOutput.textContent = '$0.00'
 }
 
 function billValidation () {
@@ -84,8 +84,8 @@ function billValidation () {
     if (billInput.valueAsNumber <= 0) {
         billInput.classList.add('err')
         billErr.style.display = ('inline')
-        tipOutput.textContent = '$0'
-        totalOutput.textContent = '$0'
+        tipOutput.textContent = '$0.00'
+        totalOutput.textContent = '$0.00'
     } else {
         billErr.style.display = ('none')
         billInput.classList.remove('err')
@@ -96,8 +96,8 @@ function peopleValidation () {
     if (peopleInput.valueAsNumber <= 0) {
         peopleInput.classList.add('err')
         peopleErr.style.display = ('inline')
-        tipOutput.textContent = '$0'
-        totalOutput.textContent = '$0'
+        tipOutput.textContent = '$0.00'
+        totalOutput.textContent = '$0.00'
     } else {
         peopleErr.style.display = ('none')
         peopleInput.classList.remove('err')
