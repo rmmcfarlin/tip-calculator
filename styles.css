@@ -148,6 +148,10 @@ input[type="button"] {
     justify-content: space-between;
 }
 
+.output:first-of-type {
+    margin-bottom: 2.5rem;
+}
+
 p:first-of-type {
     color: #FFFFFF;
     font-size: 1rem;
@@ -243,6 +247,10 @@ input[type="number"]:focus, #custom:focus {
     }
 
     .output {
-        margin-bottom: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .output:first-of-type {
+        margin-bottom: 1.5rem;
     }
 }
